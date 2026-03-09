@@ -74,3 +74,46 @@ Alta
 
 ---
 ---
+
+## Título
+**BUG-02 → Sistema permite cadastro com dados inválidos**
+
+## Descrição
+O sistema permite cadastro utilizando dados inválidos como email em formato incorreto, senha inválida ou asencia de confirmação de senha.
+
+## Massa de dados utilizados:
+1. email: automatizei.gmail.com / senha: Wl123456@ (email inválido)
+2. email: automatizei@gmail.com / senha: 123 (senha inválida)
+
+## Passos para reproduzir
+    1. Acessar página de cadastro
+    2. Preencher email com formato inválido
+    3. Informar senha fora do padrão esperado
+    4. Informar confirmação de senha diferente da senha ou não preencher
+    5. Clicar no botão "Cadastrar"
+
+## Resultado atual
+O sistema cria a conta e redireciona para "/sucesso?op=cadastro", exibindo mensagem "Conta criada com sucesso".
+
+## Resultado esperado
+O sistema deveria validar:
+- formato do email
+- regras mínimas de senha
+- confirmação de senha
+e impedir o cadastro caso os dados sejam inválidos
+
+## Severidade
+Alta
+
+## Prioridade
+Alta
+
+## Evidências
+![Evidência email inválido](evidencias/2-cadastro_email_invalido_formato.gif)
+
+![Evidência senha inválida](evidencias/3-cadastro_senha_invalida_formato.gif)
+
+![Evidência senha em branco](evidencias/4-cadastro_senha_branco.gif)
+
+---
+---
