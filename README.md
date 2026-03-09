@@ -10,3 +10,14 @@ O objetivo da analise foi identificar falhas funcionais, inconsistências de exp
 - Tela de sucesso
 
 ---
+
+# Objetivo da Avaliação
+Durante a análise foram avaliados os seguintes aspectos:
+- Validação de campos
+- Fluxos de autenticação
+- Consistência de navegação
+- Tratamento de erros
+- Regras básicas de negócio
+- Possíveis vulnetabilidades de segurança
+
+---
