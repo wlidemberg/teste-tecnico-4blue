@@ -278,3 +278,15 @@ Esse problema compromete a integridade da base de dados, permitindo a criação 
 O cadastro duplicado pode gerar inconsistências, unicidade e acessar dados indevidamente
 
 ---
+
+## Sugestões de melhoria
+
+Durante a execução dos testes foram identificadas oportunidades de melhoria no sistema:
+
+    1. Proteger rotas contra acesso direto por URL
+    2. Restringir acesso direto à página de sucesso
+    3. Proteger rotas contra acesso direto por URL
+    4. Campo telefone apresentar foematação com máscara igual ao placeholder
+    5. Corrigir problemas de responsividade no desktop
+
+---
