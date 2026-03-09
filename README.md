@@ -117,3 +117,38 @@ Alta
 
 ---
 ---
+
+## Título
+**BUG-03 → Sistema permite cadastro de número de telefone com quantidade de dígitos inválida**
+
+## Descrição
+O sistema permite o cadastro de número de telefone com quantidade de dígitos inferior ao mínimo esperado (11 dígitos) ou com quantidade maior de dígitos. Ao inserir um número com menos dígitos ou mais, o sistema aceita o cadastro sem apresentar mensagem de validação.
+
+## Massa de dados utilizados:
+1. telefone: 21968 (quantidade menor e dígitos)
+2. telefone: 2196804533911 (quantidade maior de dígitos)
+
+## Passos para reproduzir
+    1. Acessar página de cadastro
+    2. Preencher telefone com menos ou mais dígitos
+    3. Clicar no botão "Cadastrar"
+
+## Resultado atual
+O sistema cria a conta e redireciona para "/sucesso?op=cadastro", exibindo mensagem "Conta criada com sucesso".
+
+## Resultado esperado
+O sistema exibe mensagem "Campo telefone deve conter 11 dígitos", confome a mascara e impedir o cadastro com número de telefone inválido.
+
+## Severidade
+Média
+
+## Prioridade
+Média
+
+## Evidências
+![Evidência telefone menos dígitos](evidencias/4-cadastro_telefone_menos_digitos.gif)
+
+![Evidência telefone mais dígitos](evidencias/5-cadastro_telefone_mais_digitos.gif)
+
+---
+---
