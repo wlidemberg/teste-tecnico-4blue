@@ -4,7 +4,7 @@
 Este repositório contém relatório de testes exploratórios realizados no sistema:
 https://qa-play-sim.lovable.app/
 
-O objetivo da analise foi identificar falhas funcionais, inconsistências de experiência do usuário e possíveis problemas de segurança nas seguintes telas:
+O objetivo da análise foi identificar falhas funcionais, inconsistências de experiência do usuário e possíveis problemas de segurança nas seguintes telas:
 - Tela de Login
 - Tela de Criação de Conta
 - Tela de sucesso
@@ -18,7 +18,7 @@ Durante a análise foram avaliados os seguintes aspectos:
 - Consistência de navegação
 - Tratamento de erros
 - Regras básicas de negócio
-- Possíveis vulnetabilidades de segurança
+- Possíveis vulnerabilidades de segurança
 
 ---
 
@@ -79,15 +79,15 @@ Alta
 **BUG-02 → Sistema permite cadastro com dados inválidos**
 
 ## Descrição
-O sistema permite cadastro utilizando dados inválidos como email em formato incorreto, senha inválida ou asencia de confirmação de senha.
+O sistema permite cadastro utilizando dados inválidos como e-mail em formato incorreto, senha inválida ou ausência de confirmação de senha.
 
 ## Massa de dados utilizados:
-1. email: automatizei.gmail.com / senha: Wl123456@ (email inválido)
-2. email: automatizei@gmail.com / senha: 123 (senha inválida)
+1. e-mail: automatizei.gmail.com / senha: Wl123456@ (e-mail inválido)
+2. e-mail: automatizei@gmail.com / senha: 123 (senha inválida)
 
 ## Passos para reproduzir
     1. Acessar página de cadastro
-    2. Preencher email com formato inválido
+    2. Preencher e-mail com formato inválido
     3. Informar senha fora do padrão esperado
     4. Informar confirmação de senha diferente da senha ou não preencher
     5. Clicar no botão "Cadastrar"
@@ -97,7 +97,7 @@ O sistema cria a conta e redireciona para "/sucesso?op=cadastro", exibindo mensa
 
 ## Resultado esperado
 O sistema deveria validar:
-- formato do email
+- formato do e-mail
 - regras mínimas de senha
 - confirmação de senha
 e impedir o cadastro caso os dados sejam inválidos
@@ -109,7 +109,7 @@ Alta
 Alta
 
 ## Evidências
-![Evidência email inválido](evidencias/2-cadastro_email_invalido_formato.gif)
+![Evidência e-mail inválido](evidencias/2-cadastro_email_invalido_formato.gif)
 
 ![Evidência senha inválida](evidencias/3-cadastro_senha_invalida_formato.gif)
 
@@ -125,7 +125,7 @@ Alta
 O sistema permite o cadastro de número de telefone com quantidade de dígitos inferior ao mínimo esperado (11 dígitos) ou com quantidade maior de dígitos. Ao inserir um número com menos dígitos ou mais, o sistema aceita o cadastro sem apresentar mensagem de validação.
 
 ## Massa de dados utilizados:
-1. telefone: 21968 (quantidade menor e dígitos)
+1. telefone: 21968 (quantidade menor de dígitos)
 2. telefone: 2196804533911 (quantidade maior de dígitos)
 
 ## Passos para reproduzir
@@ -137,7 +137,7 @@ O sistema permite o cadastro de número de telefone com quantidade de dígitos i
 O sistema cria a conta e redireciona para "/sucesso?op=cadastro", exibindo mensagem "Conta criada com sucesso".
 
 ## Resultado esperado
-O sistema exibe mensagem "Campo telefone deve conter 11 dígitos", confome a mascara e impedir o cadastro com número de telefone inválido.
+O sistema exibe mensagem "Campo telefone deve conter 11 dígitos", conforme a mascara e impedir o cadastro com número de telefone inválido.
 
 ## Severidade
 Média
@@ -157,17 +157,17 @@ Média
 **BUG-04 → Sistema permite cadastro duplicado**
 
 ## Descrição
-O sistema permite criar múltiplas contas utilizando o mesmo email.
+O sistema permite criar múltiplas contas utilizando o mesmo e-mail.
 
 ## Passos para reproduzir
-    1. Criar uma conta com email válido
-    2. Tentar criar novamente utilizando o mesmo email.
+    1. Criar uma conta com e-mail válido
+    2. Tentar criar novamente utilizando o mesmo e-mail.
 
 ## resultado atual
-O sistema permiti criar outra conta com mesmo email.
+O sistema permite criar outra conta com mesmo e-mail.
 
 ## Resultado esperado
-O sistema deve impedir o cadastro duplicado e exibir mensagem informando "Email já está registrado, use outro email ou faça o login." e permanecer na tela de cadastro.
+O sistema deve impedir o cadastro duplicado e exibir mensagem informando "E-mail já está registrado, use outro e-mail ou faça o login." e permanecer na tela de cadastro.
 
 ## Severidade
 Alta
@@ -176,7 +176,7 @@ Alta
 Média
 
 ## Evidências
-![Evidência email ja cadastrado](evidencias/6-cadastrar_email_existente.gif)
+![Evidência e-mail ja cadastrado](evidencias/6-cadastrar_email_existente.gif)
 
 ---
 ---
@@ -192,7 +192,7 @@ O sistema exibe mensagem "Erro inesperado", mesmo quando o login é realizado co
     2. Realizar login utilizando as credenciais criadas.
 
 ## Resultado atual
-O usuário é redirecionado para a tela de Login realizado com sucesso, porem o sistema exibe mensagem informando "Erro inesperado".
+O usuário é redirecionado para a tela de Login realizado com sucesso, porém o sistema exibe mensagem informando "Erro inesperado".
 
 ## Resultado esperado
 Após o login válido, o sistema deveria exibir apenas a mensagem "Login realizado com sucesso", sem apresentar erros.
@@ -232,7 +232,7 @@ Crítica
 Alta
 
 ## Evidências
-![Evidências aceeso direto](evidencias/7-login_acesso_direto.gif)
+![Evidências acesso direto](evidencias/7-login_acesso_direto.gif)
 
 ---
 ---
@@ -244,7 +244,7 @@ Alta
 Durante a execução dos testes foi observado que os campos do formulário apresentam sobreposição no layout desktop, causando quebra visual e ultrapassando os limites do seu container.
 
 ## Passo para reproduzir
-    1. Acesar a página de cadastro.
+    1. Acessar a página de cadastro.
     2. Visualizar a página em resolução padrão.
     3. Observar posicionamento dos campos do formulário.
 
@@ -272,7 +272,7 @@ Apesar de ter solicitado apenas 2 bugs priorizáveis, eu recomendo igualmente a 
 é uma brecha de segurança que é possível acessar sem autenticação e certamente alterar dados e até "sequestrar" um sistema real.
 
 - BUG-01 → Sistema permite cadastro com campos obrigatórios vazios
-Esse problema compromete a integridade da base de dados, permitindo a criação de usuários inválidos e registro incomppletos no sistema. Sem validação de campos obrigatórios, diversos fluxos do sistema podem ser afetados, incluindo autenticação e gerencimento de contas.
+Esse problema compromete a integridade da base de dados, permitindo a criação de usuários inválidos e registros incompletos no sistema. Sem validação de campos obrigatórios, diversos fluxos do sistema podem ser afetados, incluindo autenticação e gerenciamento de contas.
 
 - BUG-04 → Sistema permite cadastro duplicado
 O cadastro duplicado pode gerar inconsistências, unicidade e acessar dados indevidamente
@@ -285,8 +285,8 @@ Durante a execução dos testes foram identificadas oportunidades de melhoria no
 
     1. Proteger rotas contra acesso direto por URL
     2. Restringir acesso direto à página de sucesso
-    3. Proteger rotas contra acesso direto por URL
-    4. Campo telefone apresentar foematação com máscara igual ao placeholder
+    3. Implementar validação adequada nos formulários
+    4. Campo telefone apresentar formatação com máscara igual ao placeholder
     5. Corrigir problemas de responsividade no desktop
 
 ---
