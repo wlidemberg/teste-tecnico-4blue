@@ -264,3 +264,17 @@ Baixa
 ![Evidência quebra layout](evidencias/7-quebra_layout.gif)
 
 ---
+
+## Priorização de Correção
+Apesar de ter solicitado apenas 2 bugs priorizáveis, eu recomendo igualmente a correção dos 3 seguintes bugs por serem críticos e com possibilidade de causar prejuízos incontáveis em sistemas reais:
+
+- BUG-06 → Acesso direto a página Login realizado com sucesso
+é uma brecha de segurança que é possível acessar sem autenticação e certamente alterar dados e até "sequestrar" um sistema real.
+
+- BUG-01 → Sistema permite cadastro com campos obrigatórios vazios
+Esse problema compromete a integridade da base de dados, permitindo a criação de usuários inválidos e registro incomppletos no sistema. Sem validação de campos obrigatórios, diversos fluxos do sistema podem ser afetados, incluindo autenticação e gerencimento de contas.
+
+- BUG-04 → Sistema permite cadastro duplicado
+O cadastro duplicado pode gerar inconsistências, unicidade e acessar dados indevidamente
+
+---
