@@ -290,3 +290,8 @@ Durante a execução dos testes foram identificadas oportunidades de melhoria no
     5. Corrigir problemas de responsividade no desktop
 
 ---
+
+- Considerações finais
+Inicialmente foram realizados testes exploratórios para compreender as funcionalidades e comportamentos do sistema proposto.
+Como saída realizei a construção do seguinte plano de testes a serem executados novamente após a correção dos bugs:
+[Plano de testes pós-correção](./evidencias/plano_teste_pos_correcao.md)
